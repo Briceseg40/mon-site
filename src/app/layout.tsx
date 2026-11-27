@@ -10,7 +10,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CursorGlow } from "@/components/ui/CursorGlow";
 
 const description =
-  "Brice Seguret conçoit et développe des sites internet et des applications sur mesure pour les indépendants et les entreprises, depuis Anglet.";
+  "Je conçois et développe des sites internet et des applications sur mesure pour les indépendants et les entreprises, depuis Anglet.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

@@ -9,7 +9,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
   title: "À propos",
-  description: `${siteConfig.person.firstName} ${siteConfig.person.lastName}, ${siteConfig.person.age} ans, concepteur et développeur de sites et d'applications à Anglet.`,
+  description: `Je m'appelle ${siteConfig.person.firstName}, j'ai ${siteConfig.person.age} ans et je conçois des sites et des applications à Anglet.`,
   alternates: { canonical: "/a-propos" },
 };
 
