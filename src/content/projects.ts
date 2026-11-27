@@ -56,7 +56,23 @@ export const projects: Project[] = [
     featured: true,
     hue: 18,
   },
-  // Prochaine réalisation : le site de l'association de protection des odonates.
+  {
+    slug: "odo40",
+    name: "ODO40",
+    category: "site",
+    summary: "Le site d'une association landaise qui protégeait les libellules.",
+    description: [
+      "ODO40, ou ODO des Landes, était une association de protection des libellules et des demoiselles. Je lui ai livré son site en 2023. L'association a depuis fermé ses portes, et je le montre ici avec l'accord de sa fondatrice.",
+      "En 2026 je l'ai entièrement repensé. L'accueil s'ouvre maintenant sur une scène d'étang dessinée en SVG. Plus loin, on apprend à reconnaître une libellule d'une demoiselle en parcourant huit fiches espèces qu'on filtre en un clic.",
+      "Il y a aussi une page pour passer à l'action et un formulaire d'observation, laissé en démonstration puisque plus personne ne reçoit les signalements. Toutes les illustrations ont été dessinées pour le site.",
+    ],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Zod"],
+    url: "https://odo-40.vercel.app/",
+    year: "2023, repensé en 2026",
+    role: "Conception et développement",
+    featured: true,
+    hue: 150,
+  },
 ];
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
