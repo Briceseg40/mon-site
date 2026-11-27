@@ -88,8 +88,8 @@ export default async function ProjectPage({ params }: Params) {
         {project.screenshots && project.screenshots.length > 0 && (
           <div className="mt-24 grid gap-6 md:grid-cols-2">
             {project.screenshots.map((s, i) => (
-              <Reveal key={s.src} delay={(i % 2) * 0.08} className={`relative overflow-hidden rounded-[var(--radius-card)] border border-line ${i % 3 === 0 ? "aspect-[16/9] md:col-span-2" : "aspect-[4/3]"}`}>
-                <Image src={s.src} alt={s.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+              <Reveal key={s.src} delay={(i % 2) * 0.08} className={`relative overflow-hidden rounded-[var(--radius-card)] border border-line aspect-[16/10] ${i % 3 === 0 ? "md:col-span-2" : ""}`}>
+                <Image src={s.src} alt={s.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-top" />
               </Reveal>
             ))}
           </div>

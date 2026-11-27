@@ -11,7 +11,7 @@ export function ProjectVisual({ project, priority = false, sizes }: { project: P
         fill
         priority={priority}
         sizes={sizes ?? "(min-width: 1024px) 50vw, 100vw"}
-        className="object-cover transition-transform duration-[1.2s] ease-[var(--ease-out-expo)] group-hover:scale-[1.03]"
+        className="object-cover object-top transition-transform duration-[1.2s] ease-[var(--ease-out-expo)] group-hover:scale-[1.03]"
       />
     );
   }
