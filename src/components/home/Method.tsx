@@ -15,7 +15,7 @@ export function Method() {
         <div aria-hidden className="horizon absolute left-0 right-0 top-[34px] hidden md:block" />
         {method.map((m, i) => (
           <li key={m.step} className="relative"><Reveal delay={i * 0.08} className="h-full">
-            <div className="relative mb-8 hidden size-[17px] translate-y-[26px] rounded-full border border-accent bg-ink md:block" aria-hidden>
+            <div className="relative mb-8 hidden size-[17px] translate-y-[26px] rounded-full border border-accent bg-canvas md:block" aria-hidden>
               <span className="absolute inset-1 rounded-full bg-accent" />
             </div>
             <div className="card h-full p-6 md:mt-6">

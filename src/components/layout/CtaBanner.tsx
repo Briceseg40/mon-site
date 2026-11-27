@@ -11,8 +11,8 @@ export function CtaBanner({
 }) {
   return (
     <section className="container-x mt-32" aria-labelledby="cta-title">
-      <Reveal className="relative overflow-hidden rounded-[2rem] border border-line bg-ink-2 px-6 py-20 text-center sm:px-12 md:py-28">
-        <div aria-hidden className="absolute inset-x-0 bottom-0 h-2/3 bg-[radial-gradient(60%_80%_at_50%_100%,rgb(255_106_61/0.22),transparent_70%)]" />
+      <Reveal className="band-dark relative overflow-hidden rounded-[2rem] bg-canvas px-6 py-20 text-center sm:px-12 md:py-28">
+        <div aria-hidden className="absolute inset-x-0 bottom-0 h-2/3 bg-[radial-gradient(60%_80%_at_50%_100%,rgb(255_106_61/0.3),transparent_70%)]" />
         <div aria-hidden className="horizon absolute inset-x-0 bottom-10" />
         <div className="relative">
           <Availability className="mb-8 justify-center" />

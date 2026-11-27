@@ -209,12 +209,12 @@ export function ProjectForm() {
                     <span className={`h-1 w-full rounded-full transition-colors duration-500 lg:hidden ${done || current ? "bg-accent" : "bg-line-strong"}`} aria-hidden />
                     <span
                       className={`hidden size-9 shrink-0 place-items-center rounded-full border font-mono text-[12px] transition-all duration-300 lg:grid ${
-                        current ? "border-accent bg-accent text-ink" : done ? "border-accent/60 text-accent" : "border-line-strong text-mute"
+                        current ? "border-accent bg-accent text-canvas" : done ? "border-accent/60 text-accent" : "border-line-strong text-mute"
                       }`}
                     >
                       {done ? "✓" : i + 1}
                     </span>
-                    <span className={`hidden text-[15px] transition-colors lg:inline ${current ? "text-paper" : done ? "text-paper/70 group-hover:text-paper" : "text-mute"}`}>{s.label}</span>
+                    <span className={`hidden text-[15px] transition-colors lg:inline ${current ? "text-fg" : done ? "text-fg/70 group-hover:text-fg" : "text-mute"}`}>{s.label}</span>
                     <span className="sr-only">{done ? " (terminée)" : current ? " (en cours)" : ""}</span>
                   </button>
                 </li>
@@ -224,11 +224,11 @@ export function ProjectForm() {
           <p className="mt-4 font-mono text-[12px] text-mute lg:hidden">Étape {step + 1} sur {steps.length} · {steps[step].label}</p>
 
           <div className="card mt-10 hidden p-6 lg:block">
-            <p className="eyebrow mb-4">Et ensuite ?</p>
+            <p className="eyebrow mb-4">Et ensuite ?</p>
             <ol className="space-y-3 text-[14px] leading-relaxed text-mute">
-              <li><span className="text-paper">Je lis votre demande</span> personnellement.</li>
-              <li><span className="text-paper">Je vous recontacte</span> pour en parler de vive voix.</li>
-              <li><span className="text-paper">Vous recevez un devis</span> clair et gratuit.</li>
+              <li><span className="text-fg">Je lis votre demande</span> personnellement.</li>
+              <li><span className="text-fg">Je vous recontacte</span> pour en parler de vive voix.</li>
+              <li><span className="text-fg">Vous recevez un devis</span> clair et gratuit.</li>
             </ol>
             <p className="mt-6 flex items-center gap-2 text-[13px] text-mute">
               <span className="size-1.5 rounded-full bg-foam" aria-hidden />
@@ -280,11 +280,11 @@ export function ProjectForm() {
                           }}
                           onDoubleClick={() => { set("projectType", t.id); goTo(1); }}
                           className={`group relative rounded-2xl border p-5 text-left transition-all duration-300 active:scale-[0.99] ${
-                            selected ? "border-accent bg-accent-soft" : "border-line-strong hover:border-paper/40 hover:bg-paper/[0.02]"
+                            selected ? "border-accent bg-accent-soft" : "border-line-strong hover:border-fg/40 hover:bg-fg/[0.02]"
                           } ${i === projectTypes.length - 1 ? "sm:col-span-2" : ""}`}
                         >
                           <span className={`absolute right-5 top-5 grid size-5 place-items-center rounded-full border transition-colors ${selected ? "border-accent bg-accent" : "border-line-strong"}`} aria-hidden>
-                            {selected && <span className="size-1.5 rounded-full bg-ink" />}
+                            {selected && <span className="size-1.5 rounded-full bg-canvas" />}
                           </span>
                           <span className="block pr-8 text-[17px] font-medium">{t.label}</span>
                           <span className="mt-1.5 block text-[14px] text-mute">{t.hint}</span>
@@ -292,7 +292,7 @@ export function ProjectForm() {
                       );
                     })}
                   </div>
-                  {err("projectType") && <p id="f-projectType-error" role="alert" className="mt-4 text-[13px] text-accent">{err("projectType")}</p>}
+                  {err("projectType") && <p id="f-projectType-error" role="alert" className="mt-4 text-[13px] text-danger">{err("projectType")}</p>}
                 </fieldset>
               )}
 
@@ -317,7 +317,7 @@ export function ProjectForm() {
                     <p className="mb-3 text-[14px] text-mute">Besoin d&apos;un point de départ ? Cliquez pour ajouter.</p>
                     <div className="flex flex-wrap gap-2">
                       {ideaExamples.map((ex) => (
-                        <button key={ex} type="button" onClick={() => appendExample(ex)} className="rounded-full border border-dashed border-line-strong px-4 py-2 text-[14px] text-mute transition-colors hover:border-accent hover:text-paper">
+                        <button key={ex} type="button" onClick={() => appendExample(ex)} className="rounded-full border border-dashed border-line-strong px-4 py-2 text-[14px] text-mute transition-colors hover:border-accent hover:text-fg">
                           + {ex}
                         </button>
                       ))}
@@ -392,7 +392,7 @@ export function ProjectForm() {
               {step === 4 && (
                 <div className="space-y-8">
                   <Recap draft={draft} onEdit={goTo} />
-                  <label className={`flex cursor-pointer gap-4 rounded-2xl border p-5 transition-colors ${err("consent") ? "border-accent" : "border-line-strong hover:border-paper/40"}`}>
+                  <label className={`flex cursor-pointer gap-4 rounded-2xl border p-5 transition-colors ${err("consent") ? "border-accent" : "border-line-strong hover:border-fg/40"}`}>
                     <input
                       id="f-consent"
                       type="checkbox"
@@ -405,10 +405,10 @@ export function ProjectForm() {
                     <span className="text-[14px] leading-relaxed text-mute">
                       J&apos;accepte que mes informations soient utilisées pour répondre à ma demande et me recontacter à ce sujet. Elles ne sont jamais
                       revendues. Plus de détails dans la{" "}
-                      <Link href="/confidentialite" target="_blank" className="text-paper underline underline-offset-4">politique de confidentialité</Link>.
+                      <Link href="/confidentialite" target="_blank" className="text-fg underline underline-offset-4">politique de confidentialité</Link>.
                     </span>
                   </label>
-                  {err("consent") && <p id="f-consent-error" role="alert" className="-mt-5 text-[13px] text-accent">{err("consent")}</p>}
+                  {err("consent") && <p id="f-consent-error" role="alert" className="-mt-5 text-[13px] text-danger">{err("consent")}</p>}
                   {serverError && (
                     <div role="alert" className="rounded-2xl border border-accent/50 bg-accent-soft p-5 text-[14px] leading-relaxed">
                       {serverError}
@@ -425,7 +425,7 @@ export function ProjectForm() {
 
           <div className="mt-12 flex flex-col-reverse gap-3 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
             {step > 0 ? (
-              <button type="button" onClick={() => goTo(step - 1)} className="rounded-full px-4 py-3 text-[15px] text-mute transition-colors hover:text-paper">
+              <button type="button" onClick={() => goTo(step - 1)} className="rounded-full px-4 py-3 text-[15px] text-mute transition-colors hover:text-fg">
                 ← Retour
               </button>
             ) : (
@@ -434,10 +434,10 @@ export function ProjectForm() {
             {step < steps.length - 1 ? (
               <Button type="submit" arrow>{step === 2 ? "Continuer" : "Suivant"}</Button>
             ) : (
-              <Button type="submit" disabled={status === "sending"} className="bg-accent! text-ink!">
+              <Button type="submit" disabled={status === "sending"} className="bg-accent! text-fg!">
                 {status === "sending" ? (
                   <>
-                    <span className="size-4 animate-spin rounded-full border-2 border-ink/30 border-t-ink" aria-hidden />
+                    <span className="size-4 animate-spin rounded-full border-2 border-canvas/30 border-t-ink" aria-hidden />
                     Envoi en cours…
                   </>
                 ) : (

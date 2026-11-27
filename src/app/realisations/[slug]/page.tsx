@@ -45,7 +45,7 @@ export default async function ProjectPage({ params }: Params) {
     <>
       <section className="container-x pt-36 md:pt-44">
         <Reveal>
-          <Link href="/realisations" className="eyebrow inline-flex items-center gap-2 transition-colors hover:text-paper">
+          <Link href="/realisations" className="eyebrow inline-flex items-center gap-2 transition-colors hover:text-fg">
             <span aria-hidden>←</span> Toutes les réalisations
           </Link>
           <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -80,7 +80,7 @@ export default async function ProjectPage({ params }: Params) {
               {project.repo && <ButtonLink href={project.repo} target="_blank" rel="noopener noreferrer" variant="ghost">Voir le code</ButtonLink>}
             </div>
           </Reveal>
-          <Reveal delay={0.1} className="space-y-6 text-[18px] leading-relaxed text-paper/85 md:col-span-7 md:col-start-6">
+          <Reveal delay={0.1} className="space-y-6 text-[18px] leading-relaxed text-fg/85 md:col-span-7 md:col-start-6">
             {project.description.map((d, i) => <p key={i}>{d}</p>)}
           </Reveal>
         </div>
@@ -102,7 +102,7 @@ export default async function ProjectPage({ params }: Params) {
           </Link>
         )}
       </section>
-      <CtaBanner title={<>Un projet <em>dans ce genre</em> ?</>} />
+      <CtaBanner title={<>Un projet <em>dans ce genre</em> ?</>} />
     </>
   );
 }

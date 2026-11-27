@@ -4,7 +4,7 @@ import { Reveal } from "@/components/ui/Reveal";
 export function PageHeader({ eyebrow, title, intro, children }: { eyebrow: string; title: ReactNode; intro?: ReactNode; children?: ReactNode }) {
   return (
     <section className="relative overflow-hidden pb-16 pt-40 md:pb-24 md:pt-48">
-      <div aria-hidden className="pointer-events-none absolute -top-40 right-[-10%] size-[620px] rounded-full bg-[radial-gradient(circle,rgb(255_106_61/0.16),transparent_65%)] blur-2xl" />
+      <div aria-hidden className="aurora pointer-events-none absolute -right-60 -top-40 h-[620px] w-[1000px]" />
       <div className="container-x relative">
         <Reveal>
           <p className="eyebrow mb-8 flex items-center gap-3">

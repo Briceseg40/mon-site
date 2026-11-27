@@ -29,7 +29,7 @@ export default function ServicesPage() {
               <div className="md:col-span-5">
                 <p className="font-mono text-[12px] text-accent">{String(i + 1).padStart(2, "0")}</p>
                 <h2 className="display mt-4 text-[clamp(2.2rem,4vw,3.4rem)]">{s.title}</h2>
-                <p className="mt-4 text-[17px] text-paper/80">{s.short}</p>
+                <p className="mt-4 text-[17px] text-fg/80">{s.short}</p>
               </div>
               <div className="md:col-span-6 md:col-start-7">
                 <p className="text-[17px] leading-relaxed text-mute">{s.benefit}</p>

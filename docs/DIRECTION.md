@@ -1,32 +1,29 @@
 # Direction artistique et architecture
 
-## Direction artistique « Marée basse »
+## Direction artistique « Built to move » (thème clair)
 
-Le site part d'une image simple, le soleil qui se couche sur l'océan à Anglet. Fond encre presque noir, texte blanc cassé chaud, une seule couleur d'accent corail qui rappelle ce couchant. Une deuxième teinte vert d'écume n'apparaît que pour les petits signaux positifs (disponibilité, validation).
+Version 2, après retour de Brice. Fond papier chaud, encre presque noire, un accent corail. L'ambiance s'inspire des meilleurs templates actuels : beaucoup d'air, halos pastel flous, surfaces en verre dépoli, typographie sans-serif très serrée.
 
 | Rôle | Couleur |
 |---|---|
-| Fond | #0B0B0C encre |
-| Surfaces | #111113 et #18181B |
-| Texte | #EDEAE3 blanc cassé |
-| Texte secondaire | #96928B |
-| Accent | #FF6A3D corail |
-| Signal | #8FD6CB écume |
+| Fond | #F6F5F1 papier |
+| Surfaces | #FFFFFF avec ombre douce |
+| Texte | #0E0E10 encre |
+| Texte secondaire | #6B6A66 |
+| Accent | #EC4A17 corail |
+| Signal | #0F9A87 |
 
 Typographies
-- Instrument Serif pour les grands titres, avec un mot en italique corail par titre. C'est la signature éditoriale qui évite l'effet template.
-- Inter Tight pour le texte courant, très lisible sur mobile.
-- JetBrains Mono pour les petites étiquettes et les numéros de section.
+- Inter Tight serré (-4,5 %) pour les titres, avec un mot en Instrument Serif italique corail. Ce mélange donne la signature.
+- Inter Tight pour le texte, JetBrains Mono pour les petites étiquettes.
 
 Signatures visuelles
-- Une ligne d'horizon lumineuse (corail vers écume) qui revient dans le hero, la méthode, le footer.
-- Un halo lumineux qui suit la souris, très discret.
-- Un grain léger sur tout le site pour donner de la matière au noir.
-- Cartes projets avec une inclinaison 3D légère et un reflet qui suit le pointeur.
-- Titres du hero qui montent mot par mot, apparitions douces au défilement.
-- Toutes les animations se coupent si le visiteur a demandé moins d'animations dans son système.
-
-Personnalisation. Le nom, le monogramme et la signature se changent dans `src/config/site.ts`. Les couleurs dans le bloc `@theme` de `src/app/globals.css`.
+- Un globe de points en rotation dans le hero, avec des trajectoires corail. Il réagit à la souris et accélère au défilement, d'où « Built to move ».
+- Navigation en pilule de verre flottante.
+- Halos pastel (pêche et lilas) derrière les en-têtes.
+- Bandeau final sombre pour créer un contraste fort avant le footer.
+- Cartes projets avec inclinaison 3D et reflet.
+- Tout se coupe si le visiteur préfère moins d'animations.
 
 ## Arborescence
 

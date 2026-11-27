@@ -20,7 +20,7 @@ export function ServicesPreview() {
             <Reveal delay={i * 0.03}>
               <Link href={`/services#${s.id}`} className="group grid items-center gap-2 py-7 transition-colors md:grid-cols-12 md:gap-8 md:py-9">
                 <span className="font-mono text-[12px] text-mute md:col-span-1">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="font-serif text-[clamp(1.9rem,3.6vw,2.9rem)] leading-none transition-[color,transform] duration-500 ease-[var(--ease-out-expo)] group-hover:translate-x-2 group-hover:text-accent md:col-span-5">
+                <h3 className="text-[clamp(1.9rem,3.6vw,2.9rem)] font-[450] leading-none tracking-[-0.04em] transition-[color,transform] duration-500 ease-[var(--ease-out-expo)] group-hover:translate-x-2 group-hover:text-accent md:col-span-5">
                   {s.title}
                 </h3>
                 <p className="text-[16px] leading-relaxed text-mute md:col-span-5">{s.short}</p>

@@ -20,28 +20,28 @@ export function Footer() {
           <p className="eyebrow mb-5">Le site</p>
           <ul className="space-y-3 text-[15px]">
             {nav.map((n) => (
-              <li key={n.href}><Link className="text-mute transition-colors hover:text-paper" href={n.href}>{n.label}</Link></li>
+              <li key={n.href}><Link className="text-mute transition-colors hover:text-fg" href={n.href}>{n.label}</Link></li>
             ))}
-            <li><Link className="text-mute transition-colors hover:text-paper" href={projectCta.href}>{projectCta.label}</Link></li>
+            <li><Link className="text-mute transition-colors hover:text-fg" href={projectCta.href}>{projectCta.label}</Link></li>
           </ul>
         </div>
         <div className="md:col-span-2">
           <p className="eyebrow mb-5">Contact</p>
           <ul className="space-y-3 text-[15px]">
             {siteConfig.email && (
-              <li><a className="text-mute transition-colors hover:text-paper" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
+              <li><a className="text-mute transition-colors hover:text-fg" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
             )}
             {socials.map(([k, url]) => (
-              <li key={k}><a className="text-mute transition-colors hover:text-paper" href={url} target="_blank" rel="noopener noreferrer">{labels[k] ?? k}</a></li>
+              <li key={k}><a className="text-mute transition-colors hover:text-fg" href={url} target="_blank" rel="noopener noreferrer">{labels[k] ?? k}</a></li>
             ))}
-            <li><Link className="text-mute transition-colors hover:text-paper" href={projectCta.href}>Formulaire de projet</Link></li>
+            <li><Link className="text-mute transition-colors hover:text-fg" href={projectCta.href}>Formulaire de projet</Link></li>
           </ul>
         </div>
         <div className="md:col-span-3">
           <p className="eyebrow mb-5">Informations</p>
           <ul className="space-y-3 text-[15px]">
-            <li><Link className="text-mute transition-colors hover:text-paper" href="/mentions-legales">Mentions légales</Link></li>
-            <li><Link className="text-mute transition-colors hover:text-paper" href="/confidentialite">Politique de confidentialité</Link></li>
+            <li><Link className="text-mute transition-colors hover:text-fg" href="/mentions-legales">Mentions légales</Link></li>
+            <li><Link className="text-mute transition-colors hover:text-fg" href="/confidentialite">Politique de confidentialité</Link></li>
           </ul>
         </div>
       </div>

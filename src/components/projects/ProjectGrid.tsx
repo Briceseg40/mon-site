@@ -26,10 +26,10 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
             aria-pressed={active === f.id}
             onClick={() => setActive(f.id)}
             className={`relative rounded-full border px-4 py-2 text-[14px] transition-colors duration-200 ${
-              active === f.id ? "border-paper text-ink" : "border-line-strong text-mute hover:text-paper"
+              active === f.id ? "border-fg text-canvas" : "border-line-strong text-mute hover:text-fg"
             }`}
           >
-            {active === f.id && <motion.span layoutId="filter-pill" className="absolute inset-0 -z-10 rounded-full bg-paper" transition={{ type: "spring", bounce: 0.15, duration: 0.45 }} />}
+            {active === f.id && <motion.span layoutId="filter-pill" className="absolute inset-0 -z-10 rounded-full bg-fg" transition={{ type: "spring", bounce: 0.15, duration: 0.45 }} />}
             {f.label}
             <span className="ml-2 font-mono text-[11px] opacity-60">{counts[f.id]}</span>
           </button>

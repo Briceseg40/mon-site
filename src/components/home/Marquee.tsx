@@ -4,7 +4,7 @@ export function Marquee() {
   const row = (hidden = false) => (
     <ul className="flex shrink-0 items-center" aria-hidden={hidden || undefined}>
       {items.map((t) => (
-        <li key={t} className="flex items-center whitespace-nowrap px-8 font-serif text-[clamp(1.8rem,4vw,3rem)] text-paper/80">
+        <li key={t} className="flex items-center whitespace-nowrap px-8 text-[clamp(1.8rem,4vw,3rem)] font-[400] tracking-[-0.04em] text-fg/80">
           {t}
           <span className="ml-16 size-2 rounded-full bg-accent/80" aria-hidden />
         </li>

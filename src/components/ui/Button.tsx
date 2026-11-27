@@ -5,9 +5,9 @@ type Variant = "primary" | "ghost" | "link";
 
 const styles: Record<Variant, string> = {
   primary:
-    "bg-paper text-ink hover:bg-accent hover:text-ink shadow-[0_1px_0_0_rgb(255_255_255/0.4)_inset,0_10px_30px_-10px_rgb(255_106_61/0.0)] hover:shadow-[0_1px_0_0_rgb(255_255_255/0.4)_inset,0_18px_40px_-12px_rgb(255_106_61/0.55)]",
-  ghost: "border border-line-strong text-paper hover:border-paper/60 hover:bg-paper/[0.04]",
-  link: "text-paper underline-offset-4 hover:underline px-0! py-0!",
+    "bg-fg text-canvas shadow-[0_1px_0_0_rgb(255_255_255/0.25)_inset,0_8px_20px_-8px_rgb(14_14_16/0.45)] hover:-translate-y-0.5 hover:bg-accent hover:text-fg hover:shadow-[0_14px_30px_-10px_rgb(236_74_23/0.6)]",
+  ghost: "border border-line-strong bg-surface/60 text-fg backdrop-blur hover:-translate-y-0.5 hover:border-fg/40 hover:bg-surface",
+  link: "text-fg underline-offset-4 hover:underline px-0! py-0!",
 };
 
 const base =

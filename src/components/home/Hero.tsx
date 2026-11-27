@@ -5,78 +5,113 @@ import { useRef } from "react";
 import { ButtonLink } from "@/components/ui/Button";
 import { Availability } from "@/components/ui/Availability";
 import { siteConfig } from "@/config/site";
+import { DotGlobe } from "./DotGlobe";
 
-const line1 = ["Des", "sites", "et", "des", "apps"];
-const line2 = ["qui", "travaillent"];
-const line3 = ["pour", "vous."];
+const lines: { w: string; accent?: boolean }[][] = [
+  [{ w: "Des" }, { w: "sites" }, { w: "et" }, { w: "des" }, { w: "apps" }],
+  [{ w: "qui" }, { w: "travaillent", accent: true }],
+  [{ w: "pour" }, { w: "vous." }],
+];
+
+const facts = [
+  { k: "Interlocuteur", v: "Un seul, du début à la fin" },
+  { k: "Approche", v: "Design et code sur mesure" },
+  { k: "Basé à", v: siteConfig.location },
+];
 
 export function Hero() {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const sunY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
-  const fade = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const globeY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+  const globeScale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
 
   let i = 0;
-  const word = (w: string, accent = false) => {
-    const d = 0.15 + i++ * 0.06;
-    return (
-      <span key={w + d} className="inline-block overflow-hidden pb-[0.12em] align-bottom">
-        <motion.span
-          className={`inline-block ${accent ? "italic text-accent" : ""}`}
-          initial={reduce ? false : { y: "105%" }}
-          animate={{ y: 0 }}
-          transition={{ duration: 1, delay: d, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {w}
-        </motion.span>
-        {" "}
-      </span>
-    );
-  };
+  const ease = [0.22, 1, 0.36, 1] as const;
 
   return (
-    <section ref={ref} className="relative flex min-h-[100svh] items-end overflow-hidden pb-16 pt-36 md:pb-24">
-      {/* Soleil couchant sur l'horizon */}
-      <motion.div aria-hidden style={{ y: reduce ? 0 : sunY }} className="pointer-events-none absolute inset-x-0 bottom-0 h-[70%]">
-        <div className="absolute left-1/2 top-[38%] size-[min(90vw,780px)] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_50%_40%,rgb(255_106_61/0.55),rgb(255_106_61/0.12)_45%,transparent_70%)] blur-2xl" />
-        <div className="horizon absolute inset-x-0 top-[58%]" />
-        <div className="absolute inset-x-0 top-[58%] bottom-0 bg-gradient-to-b from-ink/40 to-ink" />
-      </motion.div>
+    <section ref={ref} className="relative overflow-hidden pb-16 pt-32 md:pb-24 md:pt-40">
+      <div aria-hidden className="aurora pointer-events-none absolute -right-40 -top-20 h-[720px] w-[1100px] opacity-90" />
 
-      <motion.div style={{ opacity: reduce ? 1 : fade }} className="container-x relative">
-        <motion.div initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.8 }} className="mb-10 flex flex-wrap items-center gap-x-6 gap-y-2">
-          <Availability />
-          <span className="eyebrow">{siteConfig.location}</span>
-        </motion.div>
+      <div className="container-x relative grid items-center gap-y-10 lg:grid-cols-12">
+        <div className="relative z-10 lg:col-span-7">
+          <motion.div initial={reduce ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.8, ease }}
+            className="glass mb-10 inline-flex items-center gap-3 rounded-full py-1.5 pl-3 pr-4">
+            <Availability />
+          </motion.div>
 
-        <h1 className="display text-[clamp(3.2rem,10.5vw,9.5rem)]">
-          <span className="block">{line1.map((w) => word(w))}</span>
-          <span className="block">{line2.map((w, k) => word(w, k === 1))}</span>
-          <span className="block">{line3.map((w) => word(w))}</span>
-        </h1>
+          <h1 className="display text-[clamp(3rem,7.4vw,6.4rem)]">
+            {lines.map((line, li) => (
+              <span key={li} className="block">
+                {line.map(({ w, accent }) => {
+                  const d = 0.15 + i++ * 0.06;
+                  return (
+                    <span key={w} className="inline-block overflow-hidden pb-[0.14em] align-bottom">
+                      <motion.span
+                        className="inline-block"
+                        initial={reduce ? false : { y: "110%" }}
+                        animate={{ y: 0 }}
+                        transition={{ duration: 1, delay: d, ease }}
+                      >
+                        {accent ? <em>{w}</em> : w}
+                      </motion.span>
+                      {" "}
+                    </span>
+                  );
+                })}
+              </span>
+            ))}
+          </h1>
 
-        <div className="mt-12 grid gap-10 md:grid-cols-12 md:items-end">
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-xl text-[18px] leading-relaxed text-mute md:col-span-6 md:text-[19px]"
+            transition={{ delay: 0.85, duration: 0.8, ease }}
+            className="mt-8 max-w-xl text-[18px] leading-relaxed text-mute md:text-[19px]"
           >
-            Je m&apos;appelle <span className="text-paper">Brice</span>. Je conçois et je développe des sites internet et des applications sur mesure
-            pour les indépendants et les entreprises. Vous avez un seul interlocuteur, de la première discussion à la mise en ligne.
+            Je m&apos;appelle <span className="text-fg">Brice</span>. Je conçois et je développe des sites internet et des applications sur mesure
+            pour les indépendants et les entreprises, de la première discussion à la mise en ligne.
           </motion.p>
+
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.05, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col gap-3 sm:flex-row md:col-span-6 md:justify-end"
+            transition={{ delay: 1, duration: 0.8, ease }}
+            className="mt-10 flex flex-col gap-3 sm:flex-row"
           >
             <ButtonLink href="/demarrer-un-projet" arrow>Démarrer un projet</ButtonLink>
             <ButtonLink href="/realisations" variant="ghost">Découvrir mes projets</ButtonLink>
           </motion.div>
         </div>
-      </motion.div>
+
+        <motion.div
+          style={reduce ? undefined : { y: globeY, scale: globeScale }}
+          initial={reduce ? false : { opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3, duration: 1.6, ease }}
+          className="pointer-events-none absolute right-[-45%] top-24 aspect-square w-[115%] opacity-25 sm:right-[-15%] sm:w-[80%] lg:pointer-events-auto lg:relative lg:right-auto lg:top-auto lg:col-span-5 lg:w-full lg:opacity-100"
+        >
+          <DotGlobe />
+          <div className="glass absolute bottom-[12%] left-[2%] hidden rounded-2xl px-4 py-3 lg:block">
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-mute">{siteConfig.brand.tagline}</p>
+            <p className="mt-1 text-[14px] font-medium">Des idées qui passent à l&apos;action</p>
+          </div>
+        </motion.div>
+      </div>
+
+      <motion.dl
+        initial={reduce ? false : { opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 1 }}
+        className="container-x relative mt-16 grid gap-6 border-t border-line pt-8 sm:grid-cols-3 md:mt-20"
+      >
+        {facts.map((f) => (
+          <div key={f.k}>
+            <dt className="eyebrow">{f.k}</dt>
+            <dd className="mt-2 text-[17px] font-medium tracking-[-0.01em]">{f.v}</dd>
+          </div>
+        ))}
+      </motion.dl>
     </section>
   );
 }

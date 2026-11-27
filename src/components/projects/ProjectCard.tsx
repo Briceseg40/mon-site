@@ -15,7 +15,7 @@ export function ProjectCard({ project, index, large = false }: { project: Projec
   const ry = useSpring(useTransform(mx, [0, 1], [-3, 3]), { stiffness: 200, damping: 20 });
   const gx = useTransform(mx, (v) => `${v * 100}%`);
   const gy = useTransform(my, (v) => `${v * 100}%`);
-  const shine = useMotionTemplate`radial-gradient(400px circle at ${gx} ${gy}, rgb(255 255 255 / 0.08), transparent 50%)`;
+  const shine = useMotionTemplate`radial-gradient(400px circle at ${gx} ${gy}, rgb(255 255 255 / 0.35), transparent 50%)`;
 
   return (
     <motion.article
@@ -30,11 +30,11 @@ export function ProjectCard({ project, index, large = false }: { project: Projec
       className="group relative"
     >
       <Link href={`/realisations/${project.slug}`} className="block rounded-[var(--radius-card)] focus-visible:outline-offset-4">
-        <div className={`relative overflow-hidden rounded-[var(--radius-card)] border border-line bg-ink-2 ${large ? "aspect-[16/11]" : "aspect-[4/3]"}`}>
+        <div className={`relative overflow-hidden rounded-[var(--radius-card)] border border-line bg-surface shadow-[0_20px_50px_-24px_rgb(14_14_16/0.25)] transition-shadow duration-500 group-hover:shadow-[0_30px_70px_-24px_rgb(14_14_16/0.35)] ${large ? "aspect-[16/11]" : "aspect-[4/3]"}`}>
           <ProjectVisual project={project} />
           <motion.div aria-hidden className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={{ background: shine }} />
           {project.placeholder && <PlaceholderBadge className="absolute left-4 top-4" />}
-          <span className="absolute bottom-4 right-4 grid size-11 translate-y-2 place-items-center rounded-full bg-paper text-ink opacity-0 transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:translate-y-0 group-hover:opacity-100" aria-hidden>
+          <span className="absolute bottom-4 right-4 grid size-11 translate-y-2 place-items-center rounded-full bg-fg text-canvas opacity-0 transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:translate-y-0 group-hover:opacity-100" aria-hidden>
             <svg viewBox="0 0 16 16" className="size-4"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </span>
         </div>

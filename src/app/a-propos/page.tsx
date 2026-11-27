@@ -34,7 +34,7 @@ export default function AboutPage() {
         <Reveal className="md:col-span-5">
           <div className="md:sticky md:top-28"><PhotoSlot /></div>
         </Reveal>
-        <Reveal delay={0.1} className="space-y-7 text-[18px] leading-relaxed text-paper/85 md:col-span-6 md:col-start-7">
+        <Reveal delay={0.1} className="space-y-7 text-[18px] leading-relaxed text-fg/85 md:col-span-6 md:col-start-7">
           <p>
             J&apos;ai {person.age} ans et je suis en troisième année de BUT Informatique à l&apos;{person.school}. Ce qui me fait avancer, c&apos;est de
             fabriquer des choses qui servent vraiment à quelqu&apos;un.
@@ -48,7 +48,7 @@ export default function AboutPage() {
             Je ne vends pas de solution toute faite. Un artisan n&apos;a pas les mêmes besoins qu&apos;une start-up, et un site qui marche pour l&apos;un peut
             ne servir à rien pour l&apos;autre. Je préfère comprendre votre métier avant de proposer quoi que ce soit.
           </p>
-          <p className="text-paper">
+          <p className="text-fg">
             Travailler avec moi, c&apos;est avoir un seul interlocuteur qui connaît votre projet par cœur. Je n&apos;ai pas d&apos;équipe commerciale à
             rentabiliser. J&apos;ai juste envie que votre projet marche et que vous en parliez autour de vous.
           </p>
@@ -72,7 +72,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CtaBanner title={<>On travaille <em>ensemble</em> ?</>} />
+      <CtaBanner title={<>On travaille <em>ensemble</em> ?</>} />
     </>
   );
 }
