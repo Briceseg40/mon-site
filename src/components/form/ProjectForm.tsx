@@ -281,7 +281,7 @@ export function ProjectForm() {
                           onDoubleClick={() => { set("projectType", t.id); goTo(1); }}
                           className={`group relative rounded-2xl border p-5 text-left transition-all duration-300 active:scale-[0.99] ${
                             selected ? "border-accent bg-accent-soft" : "border-line-strong hover:border-fg/40 hover:bg-fg/[0.02]"
-                          } ${i === projectTypes.length - 1 ? "sm:col-span-2" : ""}`}
+                          } ${i === projectTypes.length - 1 && projectTypes.length % 2 === 1 ? "sm:col-span-2" : ""}`}
                         >
                           <span className={`absolute right-5 top-5 grid size-5 place-items-center rounded-full border transition-colors ${selected ? "border-accent bg-accent" : "border-line-strong"}`} aria-hidden>
                             {selected && <span className="size-1.5 rounded-full bg-canvas" />}

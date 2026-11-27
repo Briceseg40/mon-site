@@ -4,7 +4,6 @@ export const projectTypes = [
   { id: "site", label: "Création de site internet", hint: "Site vitrine, portfolio, site de réservation" },
   { id: "refonte", label: "Refonte de site internet", hint: "Moderniser ou reconstruire un site existant" },
   { id: "web-app", label: "Application web", hint: "Plateforme, outil métier, espace client" },
-  { id: "mobile", label: "Application mobile", hint: "iOS, Android ou les deux" },
   { id: "autre", label: "Autre projet", hint: "Maquette, conseil, idée encore floue" },
 ] as const;
 

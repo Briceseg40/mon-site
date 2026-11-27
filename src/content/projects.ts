@@ -11,7 +11,6 @@
 export const categories = [
   { id: "site", label: "Sites internet" },
   { id: "web-app", label: "Applications web" },
-  { id: "mobile", label: "Applications mobiles" },
   { id: "perso", label: "Projets personnels" },
   { id: "lab", label: "Expérimentations" },
 ] as const;

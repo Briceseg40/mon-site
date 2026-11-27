@@ -1,4 +1,4 @@
-const items = ["Sites vitrines", "Refontes", "Applications web", "Applications mobiles", "Maquettes", "Design UI/UX", "Accompagnement"];
+const items = ["Sites vitrines", "Refontes", "Applications web", "Maquettes", "Design UI/UX", "Accompagnement"];
 
 export function Marquee() {
   const row = (hidden = false) => (

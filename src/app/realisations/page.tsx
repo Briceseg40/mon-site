@@ -6,7 +6,7 @@ import { CtaBanner } from "@/components/layout/CtaBanner";
 
 export const metadata: Metadata = {
   title: "Réalisations",
-  description: "Sites internet, applications web et mobiles conçus et développés par Brice Seguret.",
+  description: "Sites internet, applications web conçus et développés par Brice Seguret.",
   alternates: { canonical: "/realisations" },
 };
 

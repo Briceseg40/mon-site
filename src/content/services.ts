@@ -5,7 +5,7 @@ export type Service = {
   benefit: string;
   details: string[];
   /** Valeur passée au formulaire pour présélectionner le type de projet. */
-  formType: "site" | "refonte" | "web-app" | "mobile" | "autre";
+  formType: "site" | "refonte" | "web-app" | "autre";
 };
 
 export const services: Service[] = [
