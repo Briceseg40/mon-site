@@ -13,6 +13,7 @@ export const categories = [
   { id: "web-app", label: "Applications web" },
   { id: "perso", label: "Projets personnels" },
   { id: "lab", label: "Expérimentations" },
+  { id: "demo", label: "Démos" },
 ] as const;
 
 export type CategoryId = (typeof categories)[number]["id"];
@@ -35,6 +36,10 @@ export type Project = {
   role?: string;
   featured?: boolean;
   placeholder?: boolean;
+  /** Site de démonstration pour une entreprise fictive. */
+  demo?: boolean;
+  /** Captures mobiles, affichées en format téléphone. */
+  mobileShots?: { src: string; alt: string }[];
   /** Teinte (0-360) du visuel généré quand il n'y a pas d'image. */
   hue?: number;
 };
@@ -90,8 +95,66 @@ export const projects: Project[] = [
     featured: true,
     hue: 150,
   },
+  {
+    slug: "itsaslur-plomberie",
+    name: "Itsaslur Plomberie",
+    category: "demo",
+    demo: true,
+    summary: "Une démo de site pour un plombier de la côte basque.",
+    description: [
+      "Itsaslur Plomberie n'existe pas. J'ai inventé cette entreprise pour montrer à un artisan ce que je peux lui faire, avec un vrai contenu de plombier plutôt qu'un faux texte en latin.",
+      "Sur un site d'artisan, presque tout se joue au téléphone. Il y a donc une barre fixe en bas de l'écran pour appeler ou demander un devis, et une page Urgence avec les bons gestes quand l'eau coule encore.",
+      "Pour Google, chaque commune a sa page avec son propre texte, de Bayonne à Biarritz. Le devis se remplit en trois étapes et arrive déjà prérempli quand on vient d'une page service. En démo, il n'envoie rien.",
+      "Pas de faux avis non plus. J'ai laissé la place pour les avis Google du futur client.",
+    ],
+    cover: "/projects/itsaslur/accueil.webp",
+    screenshots: [
+      { src: "/projects/itsaslur/urgence.webp", alt: "La page Urgence, avec les bons gestes en cas de fuite" },
+      { src: "/projects/itsaslur/service-chauffe-eau.webp", alt: "La page du service chauffe-eau" },
+      { src: "/projects/itsaslur/ville-bayonne.webp", alt: "La page dédiée à Bayonne" },
+      { src: "/projects/itsaslur/devis.webp", alt: "Le formulaire de devis en trois étapes" },
+      { src: "/projects/itsaslur/a-propos.webp", alt: "La page de présentation de l'entreprise" },
+    ],
+    mobileShots: [
+      { src: "/projects/itsaslur/mobile-accueil.webp", alt: "L'accueil sur téléphone, avec la barre Appeler et Devis" },
+      { src: "/projects/itsaslur/mobile-urgence.webp", alt: "La page Urgence sur téléphone" },
+      { src: "/projects/itsaslur/mobile-devis.webp", alt: "Le devis sur téléphone" },
+    ],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Zod"],
+    year: "2026",
+    role: "Conception et développement, projet perso",
+    featured: true,
+  },
+  {
+    slug: "hegoaize-surf",
+    name: "Hegoaize Surf Eskola",
+    category: "demo",
+    demo: true,
+    summary: "Une démo de site avec réservation pour une école de surf à Anglet.",
+    description: [
+      "Hegoaize, c'est le vent du sud en basque. C'est aussi une école de surf qui n'existe pas, que j'ai imaginée sur les plages de la Chambre d'Amour pour montrer ce qu'un site avec réservation peut faire.",
+      "On réserve en quatre étapes et le prix se met à jour au fil des choix. Les horaires des cours bougent chaque jour avec la marée. En démo la marée est simulée, sur un vrai site je brancherais l'annuaire des marées.",
+      "Pour ceux qui hésitent, quelques questions suffisent pour savoir quel cours choisir. La carte des plages est dessinée en SVG, sans Google Maps et sans cookie.",
+    ],
+    cover: "/projects/hegoaize/accueil.webp",
+    screenshots: [
+      { src: "/projects/hegoaize/reserver.webp", alt: "La réservation d'un cours" },
+      { src: "/projects/hegoaize/cours.webp", alt: "Les formules de cours et de stages" },
+      { src: "/projects/hegoaize/stage-5-jours.webp", alt: "La page du stage de cinq jours" },
+      { src: "/projects/hegoaize/le-spot.webp", alt: "La page sur le spot et les plages" },
+    ],
+    mobileShots: [
+      { src: "/projects/hegoaize/mobile-accueil.webp", alt: "L'accueil sur téléphone" },
+      { src: "/projects/hegoaize/mobile-reserver.webp", alt: "La réservation sur téléphone" },
+      { src: "/projects/hegoaize/mobile-cours.webp", alt: "Les cours sur téléphone" },
+    ],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Zod"],
+    year: "2026",
+    role: "Conception et développement, projet perso",
+    featured: true,
+  },
 ];
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
-export const featuredProjects = () => projects.filter((p) => p.featured).slice(0, 3);
+export const featuredProjects = () => projects.filter((p) => p.featured).slice(0, 4);
 export const categoryLabel = (id: CategoryId) => categories.find((c) => c.id === id)?.label ?? id;

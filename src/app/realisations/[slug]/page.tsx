@@ -51,6 +51,7 @@ export default async function ProjectPage({ params }: Params) {
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <span className="eyebrow">{categoryLabel(project.category)}</span>
             {project.placeholder && <PlaceholderBadge />}
+            {project.demo && <PlaceholderBadge label="Démo, entreprise fictive" />}
           </div>
           <h1 className="display mt-6 max-w-5xl text-[clamp(3rem,8vw,7rem)]">{project.name}</h1>
           <p className="mt-6 max-w-2xl text-[19px] leading-relaxed text-mute">{project.summary}</p>
@@ -90,6 +91,16 @@ export default async function ProjectPage({ params }: Params) {
             {project.screenshots.map((s, i) => (
               <Reveal key={s.src} delay={(i % 2) * 0.08} className={`relative overflow-hidden rounded-[var(--radius-card)] border border-line aspect-[16/10] ${i % 3 === 0 ? "md:col-span-2" : ""}`}>
                 <Image src={s.src} alt={s.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-top" />
+              </Reveal>
+            ))}
+          </div>
+        )}
+
+        {project.mobileShots && project.mobileShots.length > 0 && (
+          <div className="mx-auto mt-16 grid max-w-4xl grid-cols-3 gap-4 md:gap-8">
+            {project.mobileShots.map((s, i) => (
+              <Reveal key={s.src} delay={i * 0.08} className="relative aspect-[600/1022] overflow-hidden rounded-[1.6rem] border border-line shadow-[0_20px_40px_-24px_rgb(14_14_16/0.35)]">
+                <Image src={s.src} alt={s.alt} fill sizes="(min-width: 768px) 280px, 33vw" className="object-cover object-top" />
               </Reveal>
             ))}
           </div>

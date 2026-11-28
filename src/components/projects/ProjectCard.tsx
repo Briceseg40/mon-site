@@ -34,6 +34,7 @@ export function ProjectCard({ project, index, large = false }: { project: Projec
           <ProjectVisual project={project} />
           <motion.div aria-hidden className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={{ background: shine }} />
           {project.placeholder && <PlaceholderBadge className="absolute left-4 top-4" />}
+          {project.demo && <PlaceholderBadge className="absolute bottom-4 left-4" label="Démo, entreprise fictive" />}
           <span className="absolute bottom-4 right-4 grid size-11 translate-y-2 place-items-center rounded-full bg-fg text-canvas opacity-0 transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:translate-y-0 group-hover:opacity-100" aria-hidden>
             <svg viewBox="0 0 16 16" className="size-4"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </span>

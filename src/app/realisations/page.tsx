@@ -21,7 +21,7 @@ export default function RealisationsPage() {
       <section className="container-x">
         <ProjectGrid projects={projects} />
       </section>
-      <CtaBanner title={<>Votre projet pourrait être <em>le prochain</em>.</>} />
+      <CtaBanner title={<>Et votre projet, <em>il ressemble à quoi</em> ?</>} />
     </>
   );
 }

@@ -12,7 +12,7 @@ export function FeaturedProjects() {
       <SectionHeading
         eyebrow="Réalisations"
         title={<span id="realisations">Ce que j&apos;ai <em>déjà fait</em>.</span>}
-        intro="Deux projets pour l'instant, et j'en suis assez fier. Le site d'une asso landaise qui protégeait les libellules, et un agenda partagé monté avec ma promo."
+        intro="Deux vrais projets dont je suis assez fier, le site d'une asso landaise et un agenda monté avec ma promo. Et deux démos, pour montrer ce que je ferais pour un plombier ou une école de surf."
         aside={<ButtonLink href="/realisations" variant="ghost" arrow>Voir le détail</ButtonLink>}
       />
       <div className="grid gap-x-8 gap-y-16 md:grid-cols-2">
