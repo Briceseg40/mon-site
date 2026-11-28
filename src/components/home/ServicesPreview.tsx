@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { benefits, services } from "@/content/services";
+import { services } from "@/content/services";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Arrow } from "@/components/ui/Button";
@@ -8,10 +8,9 @@ export function ServicesPreview() {
   return (
     <section className="container-x mt-32 md:mt-44" aria-labelledby="services">
       <SectionHeading
-        index="02"
         eyebrow="Services"
-        title={<span id="services">Ce que je peux <em>faire</em> pour vous.</span>}
-        intro="Vous n'achetez pas du code. Vous avancez sur votre projet avec quelqu'un qui s'y implique autant que vous."
+        title={<span id="services">Ce que je peux <em>faire pour vous</em>.</span>}
+        intro="Surtout des sites vitrines et des petits outils web. Si votre idée ne rentre dans aucune case, écrivez-moi quand même."
       />
 
       <ul className="divide-y divide-line border-y border-line">
@@ -31,15 +30,6 @@ export function ServicesPreview() {
         ))}
       </ul>
 
-      <div className="mt-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {benefits.map((b, i) => (
-          <Reveal key={b.title} delay={i * 0.06} className="card p-7 transition-colors duration-300 hover:border-line-strong">
-            <span className="mb-10 block size-2 rounded-full bg-accent" aria-hidden />
-            <h3 className="text-[18px] font-medium">{b.title}</h3>
-            <p className="mt-2 text-[15px] leading-relaxed text-mute">{b.text}</p>
-          </Reveal>
-        ))}
-      </div>
     </section>
   );
 }

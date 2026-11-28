@@ -5,20 +5,12 @@ import { CtaBanner } from "@/components/layout/CtaBanner";
 import { PhotoSlot } from "@/components/ui/PhotoSlot";
 import { Reveal } from "@/components/ui/Reveal";
 import { ButtonLink } from "@/components/ui/Button";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
   title: "À propos",
-  description: `Je m'appelle ${siteConfig.person.firstName}, j'ai ${siteConfig.person.age} ans et je conçois des sites et des applications à Anglet.`,
+  description: `Je m'appelle ${siteConfig.person.firstName}, j'ai ${siteConfig.person.age} ans et je fais des sites et des applications web depuis Anglet.`,
   alternates: { canonical: "/a-propos" },
 };
-
-const values = [
-  { title: "Contact direct", text: "Vous parlez à la personne qui fait le travail. Pas de chef de projet entre nous." },
-  { title: "Sur mesure", text: "Chaque projet part de votre activité, pas d'un modèle tout prêt." },
-  { title: "Transparence", text: "Un devis clair, un planning tenu, et je vous dis quand une idée n'est pas la bonne." },
-  { title: "Suivi", text: "Je reste joignable après la mise en ligne, le projet continue de vivre." },
-];
 
 export default function AboutPage() {
   const { person } = siteConfig;
@@ -26,8 +18,8 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="À propos"
-        title={<>Bonjour, moi c&apos;est <em>{person.firstName}</em>.</>}
-        intro={`${person.age} ans, ${person.studies} à l'${person.school}, et une vraie envie de construire des outils qui servent.`}
+        title={<>Salut, moi c&apos;est <em>{person.firstName}</em>.</>}
+        intro={`J'ai ${person.age} ans, je travaille depuis Anglet et je finis mon BUT Informatique à Bayonne.`}
       />
 
       <section className="container-x grid gap-14 md:grid-cols-12">
@@ -36,43 +28,28 @@ export default function AboutPage() {
         </Reveal>
         <Reveal delay={0.1} className="space-y-7 text-[18px] leading-relaxed text-fg/85 md:col-span-6 md:col-start-7">
           <p>
-            J&apos;ai {person.age} ans et je suis en troisième année de BUT Informatique à l&apos;{person.school}. Ce qui me fait avancer, c&apos;est de
-            fabriquer des choses qui servent vraiment à quelqu&apos;un.
+            Je suis en troisième année de BUT Informatique à l&apos;{person.school}. Le code, je l&apos;ai appris en cours, mais aussi sur
+            OpenClassrooms et en me cassant les dents sur des sites WordPress et Shopify.
           </p>
           <p>
-            Une idée encore floue, quelques notes dans un carnet, un besoin qu&apos;on n&apos;arrive pas à formuler. C&apos;est souvent comme ça que
-            commence un projet, et c&apos;est là que je suis le plus utile. Je pose beaucoup de questions. Ensuite je dessine, et on avance ensemble jusqu&apos;à
-            un produit concret que vous pouvez montrer et utiliser.
+            En 2023, j&apos;ai fait le site d&apos;ODO40, une association des Landes qui protégeait les libellules. L&apos;asso a fermé depuis. J&apos;ai
+            quand même repris le site en 2026, pour voir ce que je ferais autrement aujourd&apos;hui. Pas mal de choses, en fait.
           </p>
           <p>
-            Je ne vends pas de solution toute faite. Un artisan n&apos;a pas les mêmes besoins qu&apos;une start-up, et un site qui marche pour l&apos;un peut
-            ne servir à rien pour l&apos;autre. Je préfère comprendre votre métier avant de proposer quoi que ce soit.
+            À l&apos;IUT, on a monté AgendSup à plusieurs, un agenda partagé pour la promo. J&apos;y ai surtout fait le design et une bonne partie du
+            front, la mascotte comprise.
           </p>
           <p className="text-fg">
-            Travailler avec moi, c&apos;est avoir un seul interlocuteur qui connaît votre projet par cœur. Je n&apos;ai pas d&apos;équipe commerciale à
-            rentabiliser. J&apos;ai juste envie que votre projet marche et que vous en parliez autour de vous.
+            Je n&apos;ai ni commerciaux ni bureaux à payer. Vous me parlez directement, et si une idée ne me paraît pas bonne, je vous le dis.
           </p>
           <div className="flex flex-col gap-3 pt-4 sm:flex-row">
-            <ButtonLink href="/demarrer-un-projet" arrow>Démarrer un projet</ButtonLink>
-            <ButtonLink href="/realisations" variant="ghost">Voir mes réalisations</ButtonLink>
+            <ButtonLink href="/demarrer-un-projet" arrow>Me parler de votre projet</ButtonLink>
+            <ButtonLink href="/realisations" variant="ghost">Voir mes projets</ButtonLink>
           </div>
         </Reveal>
       </section>
 
-      <section className="container-x mt-32 md:mt-44">
-        <SectionHeading eyebrow="Ma façon de travailler" title={<>Ce sur quoi <em>je ne transige pas</em>.</>} />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {values.map((v, i) => (
-            <Reveal key={v.title} delay={i * 0.06} className="card p-7">
-              <p className="font-mono text-[12px] text-accent">{String(i + 1).padStart(2, "0")}</p>
-              <h3 className="mt-8 text-[19px] font-medium">{v.title}</h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-mute">{v.text}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <CtaBanner title={<>On travaille <em>ensemble</em> ?</>} />
+      <CtaBanner title={<>On en <em>parle</em> ?</>} />
     </>
   );
 }

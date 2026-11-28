@@ -25,7 +25,7 @@ export function PhotoSlot({ className = "" }: { className?: string }) {
       <div className="absolute inset-x-5 bottom-5 flex items-center justify-between rounded-2xl border border-line bg-canvas/70 px-5 py-4 backdrop-blur-md">
         <div>
           <p className="text-[15px] font-medium">{siteConfig.person.firstName} {siteConfig.person.lastName}</p>
-          <p className="text-[13px] text-mute">Concepteur et développeur</p>
+          <p className="text-[13px] text-mute">Étudiant et développeur web</p>
         </div>
         <span className="eyebrow">{siteConfig.location.split(",")[0]}</span>
       </div>

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { nav, projectCta, siteConfig } from "@/config/site";
 import { Logo } from "@/components/ui/Logo";
-import { Availability } from "@/components/ui/Availability";
 
 export function Footer() {
   const socials = Object.entries(siteConfig.socials).filter(([, url]) => url);
@@ -12,9 +11,8 @@ export function Footer() {
         <div className="md:col-span-5">
           <Logo />
           <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-mute">
-            {siteConfig.brand.activity}. Je travaille depuis {siteConfig.location} avec des clients d&apos;ici et d&apos;ailleurs.
+            Je fais des sites et des applis web depuis Anglet, pour des gens du Pays basque et d&apos;ailleurs.
           </p>
-          <Availability className="mt-6" />
         </div>
         <div className="md:col-span-2">
           <p className="eyebrow mb-5">Le site</p>
@@ -48,7 +46,7 @@ export function Footer() {
       <div className="horizon" aria-hidden />
       <div className="container-x flex flex-col gap-2 py-6 text-[13px] text-mute sm:flex-row sm:justify-between">
         <p>© {new Date().getFullYear()} {siteConfig.brand.name} · <span className="uppercase tracking-[0.14em]">{siteConfig.brand.tagline}</span></p>
-        <p>Conçu et développé à la main, à {siteConfig.location.split(",")[0]}.</p>
+        <p>Codé à la main, sans template.</p>
       </div>
     </footer>
   );

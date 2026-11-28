@@ -24,11 +24,10 @@ export function ThankYou() {
         </svg>
       </motion.div>
       <h1 className="display mx-auto max-w-4xl text-[clamp(3rem,8vw,6.5rem)]">
-        Merci{name ? ` ${name}` : ""}, <em>c&apos;est bien reçu</em>.
+        Merci{name ? ` ${name}` : ""}, <em>c&apos;est bien arrivé</em>.
       </h1>
       <p className="mx-auto mt-8 max-w-lg text-[18px] leading-relaxed text-mute">
-        Je lis votre demande avec attention et je reviens vers vous très vite. Un e-mail de confirmation vient de partir, pensez à jeter un œil dans vos
-        indésirables si vous ne le voyez pas.
+        Je lis votre message et je reviens vers vous dans les prochains jours, par mail ou par téléphone si vous m&apos;avez laissé un numéro.
       </p>
     </>
   );

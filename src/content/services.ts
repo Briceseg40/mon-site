@@ -12,62 +12,55 @@ export const services: Service[] = [
   {
     id: "site-vitrine",
     title: "Site vitrine",
-    short: "Un site clair qui donne envie de vous appeler.",
+    short: "Pour qu'on vous trouve, et qu'on ait envie de vous appeler.",
     benefit:
-      "Vos clients vous cherchent sur Google avant de pousser la porte. Je construis un site rapide, bien référencé, qui explique ce que vous faites en quelques secondes et qui transforme une visite en prise de contact.",
-    details: ["Design sur mesure, pas de thème acheté", "Référencement local soigné", "Formulaire de contact relié à votre boîte mail", "Vous modifiez vos textes vous-même"],
+      "Les gens vous cherchent sur Google avant de vous appeler. Je fais un site rapide qui dit clairement ce que vous faites, sans thème acheté tout prêt. Et vous pourrez changer vos textes vous-même.",
+    details: ["Un design fait pour vous", "Référencement local", "Formulaire qui arrive dans votre boîte mail", "Textes modifiables par vous"],
     formType: "site",
   },
   {
     id: "refonte",
     title: "Refonte de site",
-    short: "Votre site actuel ne vous ressemble plus ? On le remet à niveau.",
+    short: "Votre site a pris un coup de vieux ? On le reprend.",
     benefit:
-      "Un site lent ou daté coûte des clients sans qu'on s'en rende compte. Je reprends l'existant, je garde ce qui marche et je reconstruis le reste, sans perdre votre référencement.",
-    details: ["Audit de l'existant avant de toucher à quoi que ce soit", "Redirections pour garder vos positions Google", "Contenus réécrits si besoin", "Mise en ligne sans coupure"],
+      "Je regarde d'abord ce qui marche déjà, pour ne pas casser ce qui vous amène des visites. Le reste, je le refais. C'est ce que j'ai fait avec le site d'ODO40, livré en 2023 et repensé de zéro trois ans plus tard.",
+    details: ["Le tour de l'existant avant de toucher à quoi que ce soit", "Redirections pour garder votre place sur Google", "Textes réécrits si besoin", "Bascule sans coupure"],
     formType: "refonte",
   },
   {
     id: "application-web",
     title: "Application web",
-    short: "Un outil fait pour votre métier, pas l'inverse.",
+    short: "Quand un tableur ne suffit plus.",
     benefit:
-      "Prise de rendez-vous, espace client, gestion de stock, tableau de bord. Quand un tableur ou un logiciel générique ne suffit plus, je développe l'outil qui colle à votre façon de travailler et vous fait gagner du temps chaque semaine.",
-    details: ["Comptes utilisateurs et rôles", "Base de données sécurisée", "Paiement en ligne si besoin", "Évolutif, on ajoute des briques au fil du temps"],
+      "Si vous gérez vos réservations ou vos clients à la main dans Excel, il y a sûrement moyen de faire un outil qui colle à votre façon de bosser. Avec AgendSup, j'ai appris à gérer des comptes qui n'ont pas tous les mêmes droits, et c'est souvent par là que tout commence.",
+    details: ["Comptes et rôles", "Base de données", "Paiement en ligne si besoin", "On ajoute des morceaux au fil du temps"],
     formType: "web-app",
   },
   {
     id: "maquettes",
     title: "Maquettes et prototypes",
-    short: "Voir et tester votre idée avant d'investir dans le développement.",
+    short: "Voir votre idée avant de payer le développement.",
     benefit:
-      "Un prototype cliquable permet de convaincre un associé, un financeur ou vos premiers clients. Et surtout de corriger le tir quand ça ne coûte presque rien.",
-    details: ["Parcours utilisateur dessiné écran par écran", "Prototype cliquable sur Figma", "Itérations rapides avec vous", "Base directement réutilisable pour le développement"],
+      "Une maquette cliquable sur Figma, c'est le meilleur moyen de savoir si une idée tient debout. Ça coûte peu, et on corrige le tir avant que ça devienne cher.",
+    details: ["Les écrans dessinés un par un", "Prototype cliquable sur Figma", "Allers-retours rapides avec vous", "Réutilisable pour le développement"],
     formType: "autre",
   },
   {
     id: "design-ui-ux",
-    title: "Design UI/UX",
-    short: "Une interface qu'on comprend sans mode d'emploi.",
+    title: "Design d'interface",
+    short: "Une interface qu'on comprend sans notice.",
     benefit:
-      "Un bon design se remarque surtout quand il manque. Je travaille la clarté des écrans, la hiérarchie de l'information et les détails qui donnent confiance, pour que vos utilisateurs aillent au bout de ce qu'ils sont venus faire.",
-    details: ["Identité visuelle de l'interface", "Design responsive mobile d'abord", "Accessibilité prise en compte dès le départ", "Mini design system livré avec le projet"],
+      "Un bon design, on le remarque surtout quand il manque. Je passe du temps sur la lisibilité des écrans et sur les petits détails qui donnent confiance. Sur AgendSup, c'est moi qui m'occupais de l'identité visuelle et de la mascotte.",
+    details: ["Pensé pour le mobile d'abord", "Accessibilité prise en compte dès le départ", "Couleurs et typos cohérentes partout", "Les règles du design livrées avec le projet"],
     formType: "autre",
   },
   {
     id: "accompagnement",
-    title: "Accompagnement digital",
-    short: "Un regard technique à vos côtés, sans jargon.",
+    title: "Coup de main technique",
+    short: "Un avis franc avant de vous lancer.",
     benefit:
-      "Choisir un outil, comprendre un devis, préparer un cahier des charges. Je vous aide à prendre les bonnes décisions et je reste joignable une fois le projet en ligne.",
-    details: ["Conseil sur les outils et l'hébergement", "Aide à la rédaction du cahier des charges", "Maintenance et mises à jour", "Formation à la prise en main"],
+      "Vous hésitez entre deux outils, ou un devis vous paraît bizarre ? Je vous dis ce que j'en pense, même si la réponse c'est que vous n'avez pas besoin de moi.",
+    details: ["Choix des outils et de l'hébergement", "Aide pour écrire le cahier des charges", "Maintenance et mises à jour", "Je vous montre comment vous servir de votre site"],
     formType: "autre",
   },
-];
-
-export const benefits = [
-  { title: "Être trouvé", text: "Un site rapide et bien référencé pour apparaître quand on vous cherche." },
-  { title: "Inspirer confiance", text: "Une image soignée qui montre le sérieux de votre travail." },
-  { title: "Gagner des clients", text: "Des pages pensées pour qu'un visiteur passe à l'action." },
-  { title: "Gagner du temps", text: "Des outils qui automatisent ce que vous faites encore à la main." },
 ];

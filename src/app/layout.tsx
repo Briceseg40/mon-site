@@ -7,10 +7,9 @@ import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { CursorGlow } from "@/components/ui/CursorGlow";
 
 const description =
-  "Je conçois et développe des sites internet et des applications sur mesure pour les indépendants et les entreprises, depuis Anglet.";
+  "Je m'appelle Brice, j'ai 25 ans et je fais des sites et des applications web sur mesure depuis Anglet.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -49,7 +48,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="grain">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        <CursorGlow />
         <Header />
         <main id="contenu" className="relative z-10">{children}</main>
         <Footer />

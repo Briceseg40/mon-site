@@ -30,8 +30,6 @@ export const siteConfig = {
     linkedin: "",
     malt: "",
   },
-  /** Statut affiché dans la navigation et le hero. Mettre `available: false` pour le masquer. */
-  availability: { available: true, label: "Disponible pour de nouveaux projets" },
   /** Mentions légales. À compléter avant la mise en ligne. */
   legal: {
     status: "[À compléter] Entrepreneur individuel (micro-entreprise)",

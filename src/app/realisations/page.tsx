@@ -16,7 +16,7 @@ export default function RealisationsPage() {
       <PageHeader
         eyebrow="Réalisations"
         title={<>Ce que j&apos;ai <em>construit</em>.</>}
-        intro="Chaque projet raconte le besoin de départ, ce que j'ai fait et les outils utilisés. La liste s'allonge au fil des collaborations."
+        intro="Pour chaque projet, je raconte d'où on est partis et ce que j'ai fait moi. La liste est courte pour l'instant, elle va grandir."
       />
       <section className="container-x">
         <ProjectGrid projects={projects} />

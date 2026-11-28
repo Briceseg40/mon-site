@@ -225,11 +225,9 @@ export function ProjectForm() {
 
           <div className="card mt-10 hidden p-6 lg:block">
             <p className="eyebrow mb-4">Et ensuite ?</p>
-            <ol className="space-y-3 text-[14px] leading-relaxed text-mute">
-              <li><span className="text-fg">Je lis votre demande</span> personnellement.</li>
-              <li><span className="text-fg">Je vous recontacte</span> pour en parler de vive voix.</li>
-              <li><span className="text-fg">Vous recevez un devis</span> clair et gratuit.</li>
-            </ol>
+            <p className="text-[14px] leading-relaxed text-mute">
+              Je lis votre message et je vous rappelle pour en parler. Si on se lance, je vous envoie un devis, il est gratuit.
+            </p>
             <p className="mt-6 flex items-center gap-2 text-[13px] text-mute">
               <span className="size-1.5 rounded-full bg-foam" aria-hidden />
               Vos réponses sont gardées automatiquement.

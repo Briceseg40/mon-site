@@ -8,15 +8,16 @@ const esc = (s: string) =>
 
 const nl2br = (s: string) => esc(s).replace(/\n/g, "<br>");
 
-function layout(title: string, body: string) {
-  return `<!doctype html><html lang="fr"><body style="margin:0;background:#f4f2ee;font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;color:#141414">
-<div style="max-width:560px;margin:0 auto;padding:40px 24px">
-<p style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#ff5a2b;margin:0 0 24px">${esc(siteConfig.brand.name)} · ${esc(siteConfig.brand.tagline)}</p>
-<h1 style="font-size:24px;line-height:1.3;font-weight:600;margin:0 0 24px">${title}</h1>
+function layout(body: string) {
+  return `<!doctype html><html lang="fr"><body style="margin:0;background:#ffffff;font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;color:#1a1a1a">
+<div style="max-width:560px;margin:0 auto;padding:32px 20px;font-size:15px;line-height:1.6">
 ${body}
-<p style="font-size:12px;color:#8a8780;margin-top:40px">${esc(siteConfig.brand.name)} · ${esc(siteConfig.location)}</p>
 </div></body></html>`;
 }
+
+const p = (t: string) => `<p style="margin:0 0 16px">${t}</p>`;
+const quote = (t: string) =>
+  `<p style="margin:0 0 20px;padding:12px 16px;border-left:3px solid #e3e0da;color:#444">${nl2br(t)}</p>`;
 
 function rows(r: ProjectRequest) {
   const items: [string, string][] = [
@@ -56,25 +57,24 @@ export async function sendRequestEmails(r: ProjectRequest, id: string | null) {
           from,
           to: notify,
           replyTo: r.email,
-          subject: `Nouvelle demande · ${labelOf(projectTypes, r.projectType)} · ${r.fullName}`,
+          subject: `Nouvelle demande de ${r.fullName} (${labelOf(projectTypes, r.projectType)})`,
           html: layout(
-            `Nouvelle demande de ${esc(r.fullName)}`,
-            `<p style="font-size:15px;line-height:1.6;background:#fff;padding:16px;border-radius:12px">${nl2br(r.description)}</p>${rows(r)}${
+            `${p(`${esc(r.fullName)} t'a écrit depuis le site.`)}${quote(r.description)}${rows(r)}${
               id ? `<p style="font-size:12px;color:#8a8780">Référence ${esc(id)}</p>` : ""
-            }<p style="font-size:14px">Répondez directement à cet e-mail pour écrire à ${esc(firstName)}.</p>`,
+            }${p(`Tu peux répondre directement à ce mail, ça part chez ${esc(firstName)}.`)}`,
           ),
         })
       : Promise.resolve(null),
     resend.emails.send({
       from,
       to: r.email,
-      subject: `J'ai bien reçu votre demande, ${firstName}`,
+      subject: `Bien reçu, ${firstName}`,
       html: layout(
-        `Merci ${esc(firstName)}, votre demande est bien arrivée.`,
-        `<p style="font-size:15px;line-height:1.6">Je la lis attentivement et je reviens vers vous très vite pour en parler. Si une idée vous revient d'ici là, répondez simplement à cet e-mail.</p>
-<p style="font-size:15px;line-height:1.6">Pour mémoire, voici ce que vous m'avez envoyé.</p>
-<p style="font-size:15px;line-height:1.6;background:#fff;padding:16px;border-radius:12px">${nl2br(r.description)}</p>${rows(r)}
-<p style="font-size:15px;line-height:1.6;margin-top:24px">À très vite,<br>${esc(siteConfig.person.firstName)}</p>`,
+        `${p(`Bonjour ${esc(firstName)},`)}${p("Merci pour votre message, il est bien arrivé. Je le lis tranquillement et je vous réponds dans les prochains jours.")}${p(
+          "Si un détail vous revient d'ici là, répondez simplement à ce mail, ça arrive directement chez moi.",
+        )}${p("Je vous remets ce que vous m'avez envoyé, pour mémoire.")}${quote(r.description)}${rows(r)}<p style="margin:24px 0 0">À bientôt,<br>${esc(
+          siteConfig.person.firstName,
+        )}</p>`,
       ),
       ...(notify ? { replyTo: notify } : {}),
     }),
